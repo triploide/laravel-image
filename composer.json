@@ -1,0 +1,37 @@
+{
+    "name": "kamecode/image",
+    "description": "Image manipulation for Laravel",
+    "keywords": ["laravel", "image", "intervention"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name":     "KameCode",
+            "email":    "info@kame-code.com",
+            "homepage": "https://kame-code.com"
+        }
+    ],
+    "require": {
+        "php": "^7.3|^8.0",
+        "illuminate/console": "6.0|^7.0|^8.0",
+        "illuminate/filesystem": "6.0|^7.0|^8.0",
+        "illuminate/support": "6.0|^7.0|^8.0",
+        "intervention/image": "^2.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "KameCode\\Image\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "KameCode\\Image\\KameImageServiceProvider"
+            ]
+        }
+    },
+    "require-dev": {
+        "orchestra/testbench": "^6.0@dev"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
