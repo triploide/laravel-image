@@ -68,7 +68,11 @@ class Image extends Model
         $size = $size ?? $defaultFolder;
         $disk = $this->config->get('storage.disk');
 
-        $path = str_replace("/$defaultFolder/", "/$size/", $this->path);
+        if ($this->path) {
+            $path = str_replace("/$defaultFolder/", "/$size/", $this->path);
+        } else {
+            $path = "{$this->entity}/{$size}/" . $this->config->get("'image_not_found.{$this->entity}", $this->config->get('image_not_found.default'));
+        }
 
         return Storage::disk($disk)->url($path);
     }
